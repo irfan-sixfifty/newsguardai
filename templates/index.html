@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsGuard AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>📰 NewsGuard AI</h1>
+
+    <button class="generate-btn" onclick="fetchRandomArticle()">Generate Random Article</button>
+
+    <div class="input-section" id="article-section">
+      <textarea id="article-text" readonly placeholder="Generated article will appear here..."></textarea>
+    </div>
+
+    <div class="guess-buttons" id="guess-buttons">
+      <button class="guess-btn real-btn" onclick="submitGuess('Real')">Real News</button>
+      <button class="guess-btn fake-btn" onclick="submitGuess('Fake')">Fake News</button>
+    </div>
+
+    <div class="reveal-card" id="result-card">
+      <h2 id="result-text"></h2>
+      <div class="explanation">
+        The article was classified as: <span id="actual-class"></span>
+      </div>
+      <button class="generate-btn" onclick="fetchRandomArticle()" style="margin-top: 1.5rem;">
+        Try Another Article
+      </button>
+    </div>
+
+    <div class="verify-section">
+      <h3>Verify Any Article</h3>
+      <textarea id="verify-text" placeholder="Paste any article from the web here..."></textarea>
+      <button class="generate-btn" onclick="verifyArticle()">Check Authenticity</button>
+      <div id="verdict-result" class="hidden">
+        <p><strong>AI Verdict:</strong> <span id="verdict-text"></span></p>
+        <div id="sources">
+          <h4>Top Sources Checked:</h4>
+          <ul id="sources-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      This tool uses news articles from our verified dataset.<br>
+      Make your prediction first before seeing the actual classification.
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

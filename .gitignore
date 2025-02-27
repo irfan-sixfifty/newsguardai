@@ -1,0 +1,8 @@
+# Add these lines
+.env
+__pycache__/
+*.zip
+*.csv
+venv/
+*.egg-info
+.DS_Store
