@@ -3,6 +3,6 @@
 __pycache__/
 *.zip
 *.csv
-venv/
+spacyenv/
 *.egg-info
 .DS_Store
