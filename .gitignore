@@ -2,6 +2,7 @@
 .env
 __pycache__/
 *.zip
+!News dataset.zip
 *.csv
 spacyenv/
 *.egg-info
